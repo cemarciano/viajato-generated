@@ -1,0 +1,74 @@
+entity LinhaAerea {
+	id Long required,
+	nome String required,
+    codigo String required
+}
+
+entity Voo {
+	id Long required,
+    numero Long required,
+    origem Aeroporto required,
+    destino Aeroporto required,
+    partida Instant required,
+    chegada Instant required
+}
+
+relationship OneToMany{
+	LinhaAerea to Voo
+}
+
+relationship OneToOne{
+	Voo to LinhaAerea
+}
+
+entity Locadora {
+	id Long required,
+	nome String required
+}
+
+entity Carro {
+	id Long required,
+    fabricante String required,
+    modelo String required,
+    ano String required,
+    cor String required
+}
+
+relationship OneToMany {
+	Locadora to Carro
+}
+
+relationship OneToOne {
+	Carro to Locadora
+}
+
+entity Hotel {
+	id Long required,
+	cidade Cidade required,
+    endereco String required,
+    telefone String required,
+    nota String required
+}
+
+entity Quarto {
+	id Long required,
+    nome String required,
+    capacidade Long required,
+    preco Long required
+}
+
+relationship OneToMany {
+	Hotel to Quarto
+}
+
+relationship OneToOne {
+	Quarto to Hotel
+}
+
+enum Aeroporto {
+	SDU, GIG, CGH, VCP, BSB, CNF, PLU
+}
+
+enum Cidade {
+	RIODEJANEIRO, SAOPAULO, CAMPINAS, BRASILIA, BELOHORIZONTE
+}
