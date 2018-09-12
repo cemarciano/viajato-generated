@@ -5,6 +5,15 @@
     xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
 
     <include file="config/liquibase/changelog/00000000000000_initial_schema.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180912132606_added_entity_LinhaAerea.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180912132607_added_entity_Voo.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180912132608_added_entity_Locadora.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180912132609_added_entity_Carro.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180912132610_added_entity_Hotel.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180912132611_added_entity_Quarto.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
+    <include file="config/liquibase/changelog/20180912132607_added_entity_constraints_Voo.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180912132609_added_entity_constraints_Carro.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180912132611_added_entity_constraints_Quarto.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
 </databaseChangeLog>

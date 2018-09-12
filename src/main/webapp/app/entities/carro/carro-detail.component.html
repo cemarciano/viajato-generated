@@ -1,0 +1,51 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="carro">
+            <h2><span jhiTranslate="viajatoApp.carro.detail.title">Carro</span> {{carro.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="viajatoApp.carro.fabricante">Fabricante</span></dt>
+                <dd>
+                    <span>{{carro.fabricante}}</span>
+                </dd>
+                <dt><span jhiTranslate="viajatoApp.carro.modelo">Modelo</span></dt>
+                <dd>
+                    <span>{{carro.modelo}}</span>
+                </dd>
+                <dt><span jhiTranslate="viajatoApp.carro.ano">Ano</span></dt>
+                <dd>
+                    <span>{{carro.ano}}</span>
+                </dd>
+                <dt><span jhiTranslate="viajatoApp.carro.cor">Cor</span></dt>
+                <dd>
+                    <span>{{carro.cor}}</span>
+                </dd>
+                <dt><span jhiTranslate="viajatoApp.carro.locadora">Locadora</span></dt>
+                <dd>
+                    <div *ngIf="carro.locadora">
+                        <a [routerLink]="['/locadora', carro.locadora?.id, 'view']">{{carro.locadora?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="viajatoApp.carro.locadora">Locadora</span></dt>
+                <dd>
+                    <div *ngIf="carro.locadora">
+                        <a [routerLink]="['/locadora', carro.locadora?.id, 'view']">{{carro.locadora?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/carro', carro.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

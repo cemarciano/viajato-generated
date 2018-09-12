@@ -38,6 +38,15 @@ public class CacheConfiguration {
             cm.createCache(br.com.viajato.domain.User.class.getName(), jcacheConfiguration);
             cm.createCache(br.com.viajato.domain.Authority.class.getName(), jcacheConfiguration);
             cm.createCache(br.com.viajato.domain.User.class.getName() + ".authorities", jcacheConfiguration);
+            cm.createCache(br.com.viajato.domain.LinhaAerea.class.getName(), jcacheConfiguration);
+            cm.createCache(br.com.viajato.domain.LinhaAerea.class.getName() + ".voos", jcacheConfiguration);
+            cm.createCache(br.com.viajato.domain.Voo.class.getName(), jcacheConfiguration);
+            cm.createCache(br.com.viajato.domain.Locadora.class.getName(), jcacheConfiguration);
+            cm.createCache(br.com.viajato.domain.Locadora.class.getName() + ".carros", jcacheConfiguration);
+            cm.createCache(br.com.viajato.domain.Carro.class.getName(), jcacheConfiguration);
+            cm.createCache(br.com.viajato.domain.Hotel.class.getName(), jcacheConfiguration);
+            cm.createCache(br.com.viajato.domain.Hotel.class.getName() + ".quartos", jcacheConfiguration);
+            cm.createCache(br.com.viajato.domain.Quarto.class.getName(), jcacheConfiguration);
             // jhipster-needle-ehcache-add-entry
         };
     }

@@ -1,0 +1,14 @@
+{
+    "viajatoApp": {
+        "Aeroporto" : {
+            "null": "",
+            "SDU": "SDU",
+            "GIG": "GIG",
+            "CGH": "CGH",
+            "VCP": "VCP",
+            "BSB": "BSB",
+            "CNF": "CNF",
+            "PLU": "PLU"
+        }
+    }
+}

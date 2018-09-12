@@ -1,0 +1,67 @@
+{
+    "name": "Voo",
+    "fields": [
+        {
+            "fieldName": "numero",
+            "fieldType": "Long",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "origem",
+            "fieldType": "Aeroporto",
+            "fieldValues": "SDU,GIG,CGH,VCP,BSB,CNF,PLU",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "destino",
+            "fieldType": "Aeroporto",
+            "fieldValues": "SDU,GIG,CGH,VCP,BSB,CNF,PLU",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "partida",
+            "fieldType": "Instant",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "chegada",
+            "fieldType": "Instant",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "linhaAerea",
+            "otherEntityName": "linhaAerea",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "voo"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "linhaAerea",
+            "otherEntityName": "linhaAerea",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20180912132607",
+    "entityTableName": "voo",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

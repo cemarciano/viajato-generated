@@ -1,0 +1,58 @@
+{
+    "name": "Carro",
+    "fields": [
+        {
+            "fieldName": "fabricante",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "modelo",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "ano",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "cor",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "locadora",
+            "otherEntityName": "locadora",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "carro"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "locadora",
+            "otherEntityName": "locadora",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20180912132609",
+    "entityTableName": "carro",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

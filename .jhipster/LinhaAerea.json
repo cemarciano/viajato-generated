@@ -1,0 +1,43 @@
+{
+    "name": "LinhaAerea",
+    "fields": [
+        {
+            "fieldName": "nome",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "codigo",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "voo",
+            "otherEntityName": "voo",
+            "otherEntityRelationshipName": "linhaAerea"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "voo",
+            "otherEntityName": "voo",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "linhaAerea"
+        }
+    ],
+    "changelogDate": "20180912132606",
+    "entityTableName": "linha_aerea",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

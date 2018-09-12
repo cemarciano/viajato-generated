@@ -1,0 +1,73 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-hotel-heading" jhiTranslate="viajatoApp.hotel.home.createOrEditLabel">Create or edit a Hotel</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!hotel.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="hotel.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="viajatoApp.hotel.cidade" for="field_cidade">Cidade</label>
+                    <select class="form-control" name="cidade" [(ngModel)]="hotel.cidade" id="field_cidade"  required>
+                        <option value="RIODEJANEIRO">{{'viajatoApp.Cidade.RIODEJANEIRO' | translate}}</option>
+                        <option value="SAOPAULO">{{'viajatoApp.Cidade.SAOPAULO' | translate}}</option>
+                        <option value="CAMPINAS">{{'viajatoApp.Cidade.CAMPINAS' | translate}}</option>
+                        <option value="BRASILIA">{{'viajatoApp.Cidade.BRASILIA' | translate}}</option>
+                        <option value="BELOHORIZONTE">{{'viajatoApp.Cidade.BELOHORIZONTE' | translate}}</option>
+                    </select>
+                    <div [hidden]="!(editForm.controls.cidade?.dirty && editForm.controls.cidade?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.cidade?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="viajatoApp.hotel.endereco" for="field_endereco">Endereco</label>
+                    <input type="text" class="form-control" name="endereco" id="field_endereco"
+                        [(ngModel)]="hotel.endereco" required/>
+                    <div [hidden]="!(editForm.controls.endereco?.dirty && editForm.controls.endereco?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.endereco?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="viajatoApp.hotel.telefone" for="field_telefone">Telefone</label>
+                    <input type="text" class="form-control" name="telefone" id="field_telefone"
+                        [(ngModel)]="hotel.telefone" required/>
+                    <div [hidden]="!(editForm.controls.telefone?.dirty && editForm.controls.telefone?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.telefone?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="viajatoApp.hotel.nota" for="field_nota">Nota</label>
+                    <input type="text" class="form-control" name="nota" id="field_nota"
+                        [(ngModel)]="hotel.nota" required/>
+                    <div [hidden]="!(editForm.controls.nota?.dirty && editForm.controls.nota?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.nota?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
