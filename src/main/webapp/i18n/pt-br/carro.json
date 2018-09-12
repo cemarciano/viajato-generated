@@ -1,0 +1,27 @@
+
+{
+    "viajatoApp": {
+        "carro" : {
+            "home": {
+                "title": "Carros",
+                "createLabel": "Criar novo Carro",
+                "createOrEditLabel": "Criar ou editar Carro"
+            },
+            "created": "Um novo Carro foi criado com o identificador {{ param }}",
+            "updated": "Um Carro foi atualizado com o identificador {{ param }}",
+            "deleted": "Um Carro foi deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Carro {{ id }}?"
+            },
+            "detail": {
+                "title": "Carro"
+            },
+            "fabricante": "Fabricante",
+            "modelo": "Modelo",
+            "ano": "Ano",
+            "cor": "Cor",
+            "locadora": "Locadora",
+            "locadora": "Locadora"
+        }
+    }
+}

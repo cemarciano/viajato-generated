@@ -1,0 +1,58 @@
+{
+    "name": "Hotel",
+    "fields": [
+        {
+            "fieldName": "cidade",
+            "fieldType": "Cidade",
+            "fieldValues": "RIODEJANEIRO,SAOPAULO,CAMPINAS,BRASILIA,BELOHORIZONTE",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "endereco",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "telefone",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "nota",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "quarto",
+            "otherEntityName": "quarto",
+            "otherEntityRelationshipName": "hotel"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "quarto",
+            "otherEntityName": "quarto",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "hotel"
+        }
+    ],
+    "changelogDate": "20180912132610",
+    "entityTableName": "hotel",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

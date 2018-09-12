@@ -1,0 +1,12 @@
+{
+    "viajatoApp": {
+        "Cidade" : {
+            "null": "",
+            "RIODEJANEIRO": "RIODEJANEIRO",
+            "SAOPAULO": "SAOPAULO",
+            "CAMPINAS": "CAMPINAS",
+            "BRASILIA": "BRASILIA",
+            "BELOHORIZONTE": "BELOHORIZONTE"
+        }
+    }
+}

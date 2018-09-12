@@ -1,0 +1,36 @@
+{
+    "name": "Locadora",
+    "fields": [
+        {
+            "fieldName": "nome",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "carro",
+            "otherEntityName": "carro",
+            "otherEntityRelationshipName": "locadora"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "carro",
+            "otherEntityName": "carro",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "locadora"
+        }
+    ],
+    "changelogDate": "20180912132608",
+    "entityTableName": "locadora",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

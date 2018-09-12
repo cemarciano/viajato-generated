@@ -1,0 +1,72 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="viajatoApp.carro.home.title">Carros</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-carro" [routerLink]="['/carro/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="viajatoApp.carro.home.createLabel">
+            Create new Carro
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="table-responsive" *ngIf="carros">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="viajatoApp.carro.fabricante">Fabricante</span></th>
+            <th><span jhiTranslate="viajatoApp.carro.modelo">Modelo</span></th>
+            <th><span jhiTranslate="viajatoApp.carro.ano">Ano</span></th>
+            <th><span jhiTranslate="viajatoApp.carro.cor">Cor</span></th>
+            <th><span jhiTranslate="viajatoApp.carro.locadora">Locadora</span></th>
+            <th><span jhiTranslate="viajatoApp.carro.locadora">Locadora</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let carro of carros ;trackBy: trackId">
+                <td><a [routerLink]="['/carro', carro.id, 'view' ]">{{carro.id}}</a></td>
+                <td>{{carro.fabricante}}</td>
+                <td>{{carro.modelo}}</td>
+                <td>{{carro.ano}}</td>
+                <td>{{carro.cor}}</td>
+                <td>
+                    <div *ngIf="carro.locadora">
+                        <a [routerLink]="['../locadora', carro.locadora?.id, 'view' ]" >{{carro.locadora?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="carro.locadora">
+                        <a [routerLink]="['../locadora', carro.locadora?.id, 'view' ]" >{{carro.locadora?.id}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['/carro', carro.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/carro', carro.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'carro/'+ carro.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
