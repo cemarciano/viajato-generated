@@ -1,0 +1,33 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="seguradora">
+            <h2><span jhiTranslate="viajatoApp.seguradora.detail.title">Seguradora</span> {{seguradora.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="viajatoApp.seguradora.nome">Nome</span></dt>
+                <dd>
+                    <span>{{seguradora.nome}}</span>
+                </dd>
+                <dt><span jhiTranslate="viajatoApp.seguradora.endereco">Endereco</span></dt>
+                <dd>
+                    <div *ngIf="seguradora.endereco">
+                        <a [routerLink]="['/endereco', seguradora.endereco?.id, 'view']">{{seguradora.endereco?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/seguradora', seguradora.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

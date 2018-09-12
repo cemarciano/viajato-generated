@@ -1,0 +1,27 @@
+
+{
+    "viajatoApp": {
+        "passagem" : {
+            "home": {
+                "title": "Passagems",
+                "createLabel": "Criar novo Passagem",
+                "createOrEditLabel": "Criar ou editar Passagem"
+            },
+            "created": "Um novo Passagem foi criado com o identificador {{ param }}",
+            "updated": "Um Passagem foi atualizado com o identificador {{ param }}",
+            "deleted": "Um Passagem foi deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Passagem {{ id }}?"
+            },
+            "detail": {
+                "title": "Passagem"
+            },
+            "classe": "Classe",
+            "valor": "Valor",
+            "nome": "Nome",
+            "cpf": "Cpf",
+            "voo": "Voo",
+            "cliente": "Cliente"
+        }
+    }
+}
