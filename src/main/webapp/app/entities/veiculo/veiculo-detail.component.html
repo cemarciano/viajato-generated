@@ -1,0 +1,57 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="veiculo">
+            <h2><span jhiTranslate="viajatoApp.veiculo.detail.title">Veiculo</span> {{veiculo.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="viajatoApp.veiculo.tipo">Tipo</span></dt>
+                <dd>
+                    <span>{{veiculo.tipo}}</span>
+                </dd>
+                <dt><span jhiTranslate="viajatoApp.veiculo.fabricante">Fabricante</span></dt>
+                <dd>
+                    <span>{{veiculo.fabricante}}</span>
+                </dd>
+                <dt><span jhiTranslate="viajatoApp.veiculo.modelo">Modelo</span></dt>
+                <dd>
+                    <span>{{veiculo.modelo}}</span>
+                </dd>
+                <dt><span jhiTranslate="viajatoApp.veiculo.anoModelo">Ano Modelo</span></dt>
+                <dd>
+                    <span>{{veiculo.anoModelo}}</span>
+                </dd>
+                <dt><span jhiTranslate="viajatoApp.veiculo.anoFabricacao">Ano Fabricacao</span></dt>
+                <dd>
+                    <span>{{veiculo.anoFabricacao}}</span>
+                </dd>
+                <dt><span jhiTranslate="viajatoApp.veiculo.cor">Cor</span></dt>
+                <dd>
+                    <span>{{veiculo.cor}}</span>
+                </dd>
+                <dt><span jhiTranslate="viajatoApp.veiculo.numPassageiros">Num Passageiros</span></dt>
+                <dd>
+                    <span>{{veiculo.numPassageiros}}</span>
+                </dd>
+                <dt><span jhiTranslate="viajatoApp.veiculo.locadora">Locadora</span></dt>
+                <dd>
+                    <div *ngIf="veiculo.locadora">
+                        <a [routerLink]="['/locadora', veiculo.locadora?.id, 'view']">{{veiculo.locadora?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/veiculo', veiculo.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

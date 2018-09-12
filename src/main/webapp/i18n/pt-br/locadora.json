@@ -1,0 +1,26 @@
+
+{
+    "viajatoApp": {
+        "locadora" : {
+            "home": {
+                "title": "Locadoras",
+                "createLabel": "Criar novo Locadora",
+                "createOrEditLabel": "Criar ou editar Locadora"
+            },
+            "created": "Um novo Locadora foi criado com o identificador {{ param }}",
+            "updated": "Um Locadora foi atualizado com o identificador {{ param }}",
+            "deleted": "Um Locadora foi deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Locadora {{ id }}?"
+            },
+            "detail": {
+                "title": "Locadora"
+            },
+            "nome": "Nome",
+            "endereco": "Endereco",
+            "telefone": "Telefone",
+            "veiculo": "Veiculo",
+            "contrato": "Contrato"
+        }
+    }
+}
