@@ -1,0 +1,55 @@
+{
+    "name": "Contrato",
+    "fields": [
+        {
+            "fieldName": "numero",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "valor",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "descricao",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "cliente",
+            "otherEntityName": "cliente",
+            "otherEntityRelationshipName": "contrato"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "locadora",
+            "otherEntityName": "locadora",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "seguradora",
+            "otherEntityName": "seguradora",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20180912163825",
+    "entityTableName": "contrato",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

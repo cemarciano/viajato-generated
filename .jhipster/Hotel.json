@@ -1,0 +1,50 @@
+{
+    "name": "Hotel",
+    "fields": [
+        {
+            "fieldName": "nome",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "nota",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "endereco",
+            "otherEntityName": "endereco",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "hotel"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "telefone",
+            "otherEntityName": "telefone",
+            "otherEntityRelationshipName": "hotel"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "quarto",
+            "otherEntityName": "quarto",
+            "otherEntityRelationshipName": "hotel"
+        }
+    ],
+    "changelogDate": "20180912163820",
+    "entityTableName": "hotel",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

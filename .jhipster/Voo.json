@@ -1,0 +1,61 @@
+{
+    "name": "Voo",
+    "fields": [
+        {
+            "fieldName": "numero",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "partida",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "chegada",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "passagem",
+            "otherEntityName": "passagem",
+            "otherEntityRelationshipName": "voo"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "linhaAerea",
+            "otherEntityName": "linhaAerea",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "origem",
+            "otherEntityName": "aeroporto",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "destino",
+            "otherEntityName": "aeroporto",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20180912163815",
+    "entityTableName": "voo",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

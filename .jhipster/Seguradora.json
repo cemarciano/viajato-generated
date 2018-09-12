@@ -1,0 +1,43 @@
+{
+    "name": "Seguradora",
+    "fields": [
+        {
+            "fieldName": "nome",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "endereco",
+            "otherEntityName": "endereco",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "seguradora"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "contrato",
+            "otherEntityName": "contrato",
+            "otherEntityRelationshipName": "seguradora"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "telefone",
+            "otherEntityName": "telefone",
+            "otherEntityRelationshipName": "seguradora"
+        }
+    ],
+    "changelogDate": "20180912163824",
+    "entityTableName": "seguradora",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

@@ -1,0 +1,48 @@
+{
+    "name": "Aeroporto",
+    "fields": [
+        {
+            "fieldName": "nome",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "codigo",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "vemDe",
+            "otherEntityName": "voo",
+            "otherEntityRelationshipName": "origem"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "vaiPara",
+            "otherEntityName": "voo",
+            "otherEntityRelationshipName": "destino"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "cidade",
+            "otherEntityName": "cidade",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20180912163811",
+    "entityTableName": "aeroporto",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

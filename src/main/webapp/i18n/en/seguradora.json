@@ -1,0 +1,25 @@
+
+{
+    "viajatoApp": {
+        "seguradora" : {
+            "home": {
+                "title": "Seguradoras",
+                "createLabel": "Create a new Seguradora",
+                "createOrEditLabel": "Create or edit a Seguradora"
+            },
+            "created": "A new Seguradora is created with identifier {{ param }}",
+            "updated": "A Seguradora is updated with identifier {{ param }}",
+            "deleted": "A Seguradora is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Seguradora {{ id }}?"
+            },
+            "detail": {
+                "title": "Seguradora"
+            },
+            "nome": "Nome",
+            "endereco": "Endereco",
+            "contrato": "Contrato",
+            "telefone": "Telefone"
+        }
+    }
+}

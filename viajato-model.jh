@@ -1,0 +1,203 @@
+entity Estado {
+	nome String required,
+    codigo String required
+}
+
+entity Cidade {
+	nome String required
+}
+
+entity Aeroporto {
+	nome String required,
+	codigo String required
+}
+
+entity Endereco {
+	tipo String required,
+    logradouro String required,
+    numero Integer required,
+    complemento String required
+}
+
+entity Telefone {
+	ddd Integer required,
+	numero Integer required
+}
+
+entity LinhaAerea {
+	nome String required,
+	codigo String required
+}
+
+entity Voo {
+	numero Integer required,
+	partida String required,
+    chegada String required
+}
+
+entity Passagem {
+	classe String required,
+	valor Integer required,
+    nome String required,
+    cpf Integer required
+}
+
+entity Locadora{
+	nome String required
+}
+
+entity Veiculo{
+	tipo String required,
+    fabricante String required,
+    modelo String required,
+    anoModelo Integer required,
+    anoFabricacao Integer required,
+    cor String required
+    numPassageiros Integer required
+}
+
+entity Locacao{
+	inicio String required,
+    duracao Integer required,
+    valor Integer required
+}
+
+entity Hotel{
+	nome String required,
+    nota Integer required
+}
+
+entity Quarto{
+	tipo String required,
+    capacidade Integer required,
+    diaria Integer required,
+    descricao String required
+}
+
+entity Reserva{
+	numPessoas Integer required,
+    inicio String required,
+    duracao Integer required,
+    valor Integer required
+}
+
+entity Cliente{
+	nome String required,
+    cpf Integer required,
+    email String required,
+    senha String required
+}
+
+entity Seguradora{
+	nome String required
+}
+
+entity Contrato{
+	numero Integer required,
+    valor Integer required,
+    descricao String required
+}
+
+relationship OneToMany{
+	Estado to Cidade
+}
+
+relationship OneToMany{
+	Cidade to Aeroporto
+}
+
+relationship OneToMany{
+	Cidade to Endereco
+}
+
+relationship OneToMany{
+	LinhaAerea to Telefone
+}
+
+relationship OneToMany{
+	LinhaAerea to Voo
+}
+
+relationship OneToMany{
+	Voo to Passagem
+}
+
+relationship OneToMany{
+	Cliente to Passagem
+}
+
+relationship OneToOne{
+	Locadora to Endereco
+}
+
+relationship OneToMany{
+	Locadora to Telefone
+}
+
+relationship OneToMany{
+	Locadora to Veiculo
+}
+
+relationship OneToMany{
+	Veiculo to Locacao
+}
+
+relationship OneToMany{
+	Cliente to Locacao
+}
+
+relationship OneToOne{
+	Hotel to Endereco
+}
+
+relationship OneToMany{
+	Hotel to Telefone
+}
+
+relationship OneToMany{
+	Hotel to Quarto
+}
+
+relationship OneToMany{
+	Quarto to Reserva
+}
+
+relationship OneToMany{
+	Cliente to Reserva
+}
+
+relationship OneToOne{
+	Locadora to Endereco
+}
+
+relationship OneToMany{
+	Locadora to Telefone
+}
+
+relationship OneToMany{
+	Locadora to Contrato
+}
+
+relationship OneToMany{
+	Contrato to Cliente
+}
+
+relationship OneToMany{
+	Seguradora to Contrato
+}
+
+relationship OneToMany{
+	Seguradora to Telefone
+}
+
+relationship OneToOne{
+	Seguradora to Endereco
+}
+
+relationship OneToMany{
+	Aeroporto{vemDe} to Voo{origem}
+}
+
+relationship OneToMany{
+	Aeroporto{vaiPara} to Voo{destino}
+}

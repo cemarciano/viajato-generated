@@ -1,0 +1,68 @@
+{
+    "name": "Cliente",
+    "fields": [
+        {
+            "fieldName": "nome",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "cpf",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "email",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "senha",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "passagem",
+            "otherEntityName": "passagem",
+            "otherEntityRelationshipName": "cliente"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "locacao",
+            "otherEntityName": "locacao",
+            "otherEntityRelationshipName": "cliente"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "reserva",
+            "otherEntityName": "reserva",
+            "otherEntityRelationshipName": "cliente"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "contrato",
+            "otherEntityName": "contrato",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20180912163823",
+    "entityTableName": "cliente",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

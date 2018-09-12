@@ -1,0 +1,41 @@
+{
+    "name": "Cidade",
+    "fields": [
+        {
+            "fieldName": "nome",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "aeroporto",
+            "otherEntityName": "aeroporto",
+            "otherEntityRelationshipName": "cidade"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "endereco",
+            "otherEntityName": "endereco",
+            "otherEntityRelationshipName": "cidade"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "estado",
+            "otherEntityName": "estado",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20180912163810",
+    "entityTableName": "cidade",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

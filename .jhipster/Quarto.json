@@ -1,0 +1,56 @@
+{
+    "name": "Quarto",
+    "fields": [
+        {
+            "fieldName": "tipo",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "capacidade",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "diaria",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "descricao",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "reserva",
+            "otherEntityName": "reserva",
+            "otherEntityRelationshipName": "quarto"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "hotel",
+            "otherEntityName": "hotel",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20180912163821",
+    "entityTableName": "quarto",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

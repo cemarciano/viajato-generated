@@ -1,0 +1,82 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-voo-heading" jhiTranslate="viajatoApp.voo.home.createOrEditLabel">Create or edit a Voo</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!voo.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="voo.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="viajatoApp.voo.numero" for="field_numero">Numero</label>
+                    <input type="number" class="form-control" name="numero" id="field_numero"
+                        [(ngModel)]="voo.numero" required/>
+                    <div [hidden]="!(editForm.controls.numero?.dirty && editForm.controls.numero?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.numero?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.controls.numero?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="viajatoApp.voo.partida" for="field_partida">Partida</label>
+                    <input type="text" class="form-control" name="partida" id="field_partida"
+                        [(ngModel)]="voo.partida" required/>
+                    <div [hidden]="!(editForm.controls.partida?.dirty && editForm.controls.partida?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.partida?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="viajatoApp.voo.chegada" for="field_chegada">Chegada</label>
+                    <input type="text" class="form-control" name="chegada" id="field_chegada"
+                        [(ngModel)]="voo.chegada" required/>
+                    <div [hidden]="!(editForm.controls.chegada?.dirty && editForm.controls.chegada?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.chegada?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="viajatoApp.voo.linhaAerea" for="field_linhaAerea">Linha Aerea</label>
+                    <select class="form-control" id="field_linhaAerea" name="linhaAerea" [(ngModel)]="voo.linhaAerea" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="linhaAereaOption.id === voo.linhaAerea?.id ? voo.linhaAerea : linhaAereaOption" *ngFor="let linhaAereaOption of linhaaereas; trackBy: trackLinhaAereaById">{{linhaAereaOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="viajatoApp.voo.origem" for="field_origem">Origem</label>
+                    <select class="form-control" id="field_origem" name="origem" [(ngModel)]="voo.origem" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="aeroportoOption.id === voo.origem?.id ? voo.origem : aeroportoOption" *ngFor="let aeroportoOption of aeroportos; trackBy: trackAeroportoById">{{aeroportoOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="viajatoApp.voo.destino" for="field_destino">Destino</label>
+                    <select class="form-control" id="field_destino" name="destino" [(ngModel)]="voo.destino" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="aeroportoOption.id === voo.destino?.id ? voo.destino : aeroportoOption" *ngFor="let aeroportoOption of aeroportos; trackBy: trackAeroportoById">{{aeroportoOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
