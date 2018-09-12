@@ -1,0 +1,25 @@
+
+{
+    "viajatoApp": {
+        "linhaAerea" : {
+            "home": {
+                "title": "Linha Aereas",
+                "createLabel": "Create a new Linha Aerea",
+                "createOrEditLabel": "Create or edit a Linha Aerea"
+            },
+            "created": "A new Linha Aerea is created with identifier {{ param }}",
+            "updated": "A Linha Aerea is updated with identifier {{ param }}",
+            "deleted": "A Linha Aerea is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Linha Aerea {{ id }}?"
+            },
+            "detail": {
+                "title": "Linha Aerea"
+            },
+            "nome": "Nome",
+            "codigo": "Codigo",
+            "telefone": "Telefone",
+            "voo": "Voo"
+        }
+    }
+}

@@ -1,0 +1,26 @@
+
+{
+    "viajatoApp": {
+        "hotel" : {
+            "home": {
+                "title": "Hotels",
+                "createLabel": "Criar novo Hotel",
+                "createOrEditLabel": "Criar ou editar Hotel"
+            },
+            "created": "Um novo Hotel foi criado com o identificador {{ param }}",
+            "updated": "Um Hotel foi atualizado com o identificador {{ param }}",
+            "deleted": "Um Hotel foi deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Hotel {{ id }}?"
+            },
+            "detail": {
+                "title": "Hotel"
+            },
+            "nome": "Nome",
+            "nota": "Nota",
+            "endereco": "Endereco",
+            "telefone": "Telefone",
+            "quarto": "Quarto"
+        }
+    }
+}
