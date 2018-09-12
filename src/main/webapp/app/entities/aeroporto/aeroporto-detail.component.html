@@ -1,0 +1,37 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="aeroporto">
+            <h2><span jhiTranslate="viajatoApp.aeroporto.detail.title">Aeroporto</span> {{aeroporto.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="viajatoApp.aeroporto.nome">Nome</span></dt>
+                <dd>
+                    <span>{{aeroporto.nome}}</span>
+                </dd>
+                <dt><span jhiTranslate="viajatoApp.aeroporto.codigo">Codigo</span></dt>
+                <dd>
+                    <span>{{aeroporto.codigo}}</span>
+                </dd>
+                <dt><span jhiTranslate="viajatoApp.aeroporto.cidade">Cidade</span></dt>
+                <dd>
+                    <div *ngIf="aeroporto.cidade">
+                        <a [routerLink]="['/cidade', aeroporto.cidade?.id, 'view']">{{aeroporto.cidade?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/aeroporto', aeroporto.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

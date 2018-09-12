@@ -1,0 +1,70 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="viajatoApp.locacao.home.title">Locacaos</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-locacao" [routerLink]="['/locacao/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="viajatoApp.locacao.home.createLabel">
+            Create new Locacao
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="table-responsive" *ngIf="locacaos">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="viajatoApp.locacao.inicio">Inicio</span></th>
+            <th><span jhiTranslate="viajatoApp.locacao.duracao">Duracao</span></th>
+            <th><span jhiTranslate="viajatoApp.locacao.valor">Valor</span></th>
+            <th><span jhiTranslate="viajatoApp.locacao.veiculo">Veiculo</span></th>
+            <th><span jhiTranslate="viajatoApp.locacao.cliente">Cliente</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let locacao of locacaos ;trackBy: trackId">
+                <td><a [routerLink]="['/locacao', locacao.id, 'view' ]">{{locacao.id}}</a></td>
+                <td>{{locacao.inicio}}</td>
+                <td>{{locacao.duracao}}</td>
+                <td>{{locacao.valor}}</td>
+                <td>
+                    <div *ngIf="locacao.veiculo">
+                        <a [routerLink]="['../veiculo', locacao.veiculo?.id, 'view' ]" >{{locacao.veiculo?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="locacao.cliente">
+                        <a [routerLink]="['../cliente', locacao.cliente?.id, 'view' ]" >{{locacao.cliente?.id}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['/locacao', locacao.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/locacao', locacao.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'locacao/'+ locacao.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <!--
+        Added the constraints for entity Telefone.
+    -->
+    <changeSet id="20180912135020-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="linha_aerea_id"
+                                 baseTableName="telefone"
+                                 constraintName="fk_telefone_linha_aerea_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="linha_aerea"/>
+
+        <addForeignKeyConstraint baseColumnNames="locadora_id"
+                                 baseTableName="telefone"
+                                 constraintName="fk_telefone_locadora_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="locadora"/>
+
+        <addForeignKeyConstraint baseColumnNames="hotel_id"
+                                 baseTableName="telefone"
+                                 constraintName="fk_telefone_hotel_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="hotel"/>
+
+    </changeSet>
+</databaseChangeLog>

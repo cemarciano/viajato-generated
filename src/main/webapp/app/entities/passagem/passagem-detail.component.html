@@ -1,0 +1,51 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="passagem">
+            <h2><span jhiTranslate="viajatoApp.passagem.detail.title">Passagem</span> {{passagem.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="viajatoApp.passagem.classe">Classe</span></dt>
+                <dd>
+                    <span>{{passagem.classe}}</span>
+                </dd>
+                <dt><span jhiTranslate="viajatoApp.passagem.valor">Valor</span></dt>
+                <dd>
+                    <span>{{passagem.valor}}</span>
+                </dd>
+                <dt><span jhiTranslate="viajatoApp.passagem.nome">Nome</span></dt>
+                <dd>
+                    <span>{{passagem.nome}}</span>
+                </dd>
+                <dt><span jhiTranslate="viajatoApp.passagem.cpf">Cpf</span></dt>
+                <dd>
+                    <span>{{passagem.cpf}}</span>
+                </dd>
+                <dt><span jhiTranslate="viajatoApp.passagem.voo">Voo</span></dt>
+                <dd>
+                    <div *ngIf="passagem.voo">
+                        <a [routerLink]="['/voo', passagem.voo?.id, 'view']">{{passagem.voo?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="viajatoApp.passagem.cliente">Cliente</span></dt>
+                <dd>
+                    <div *ngIf="passagem.cliente">
+                        <a [routerLink]="['/cliente', passagem.cliente?.id, 'view']">{{passagem.cliente?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/passagem', passagem.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>
