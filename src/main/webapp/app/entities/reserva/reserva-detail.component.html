@@ -1,0 +1,51 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="reserva">
+            <h2><span jhiTranslate="viajatoApp.reserva.detail.title">Reserva</span> {{reserva.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="viajatoApp.reserva.numPessoas">Num Pessoas</span></dt>
+                <dd>
+                    <span>{{reserva.numPessoas}}</span>
+                </dd>
+                <dt><span jhiTranslate="viajatoApp.reserva.inicio">Inicio</span></dt>
+                <dd>
+                    <span>{{reserva.inicio}}</span>
+                </dd>
+                <dt><span jhiTranslate="viajatoApp.reserva.duracao">Duracao</span></dt>
+                <dd>
+                    <span>{{reserva.duracao}}</span>
+                </dd>
+                <dt><span jhiTranslate="viajatoApp.reserva.valor">Valor</span></dt>
+                <dd>
+                    <span>{{reserva.valor}}</span>
+                </dd>
+                <dt><span jhiTranslate="viajatoApp.reserva.quarto">Quarto</span></dt>
+                <dd>
+                    <div *ngIf="reserva.quarto">
+                        <a [routerLink]="['/quarto', reserva.quarto?.id, 'view']">{{reserva.quarto?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="viajatoApp.reserva.cliente">Cliente</span></dt>
+                <dd>
+                    <div *ngIf="reserva.cliente">
+                        <a [routerLink]="['/cliente', reserva.cliente?.id, 'view']">{{reserva.cliente?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/reserva', reserva.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

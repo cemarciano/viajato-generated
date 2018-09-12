@@ -1,0 +1,82 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-telefone-heading" jhiTranslate="viajatoApp.telefone.home.createOrEditLabel">Create or edit a Telefone</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!telefone.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="telefone.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="viajatoApp.telefone.ddd" for="field_ddd">Ddd</label>
+                    <input type="number" class="form-control" name="ddd" id="field_ddd"
+                        [(ngModel)]="telefone.ddd" required/>
+                    <div [hidden]="!(editForm.controls.ddd?.dirty && editForm.controls.ddd?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.ddd?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.controls.ddd?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="viajatoApp.telefone.numero" for="field_numero">Numero</label>
+                    <input type="number" class="form-control" name="numero" id="field_numero"
+                        [(ngModel)]="telefone.numero" required/>
+                    <div [hidden]="!(editForm.controls.numero?.dirty && editForm.controls.numero?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.numero?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.controls.numero?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="viajatoApp.telefone.linhaAerea" for="field_linhaAerea">Linha Aerea</label>
+                    <select class="form-control" id="field_linhaAerea" name="linhaAerea" [(ngModel)]="telefone.linhaAerea" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="linhaAereaOption.id === telefone.linhaAerea?.id ? telefone.linhaAerea : linhaAereaOption" *ngFor="let linhaAereaOption of linhaaereas; trackBy: trackLinhaAereaById">{{linhaAereaOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="viajatoApp.telefone.locadora" for="field_locadora">Locadora</label>
+                    <select class="form-control" id="field_locadora" name="locadora" [(ngModel)]="telefone.locadora" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="locadoraOption.id === telefone.locadora?.id ? telefone.locadora : locadoraOption" *ngFor="let locadoraOption of locadoras; trackBy: trackLocadoraById">{{locadoraOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="viajatoApp.telefone.hotel" for="field_hotel">Hotel</label>
+                    <select class="form-control" id="field_hotel" name="hotel" [(ngModel)]="telefone.hotel" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="hotelOption.id === telefone.hotel?.id ? telefone.hotel : hotelOption" *ngFor="let hotelOption of hotels; trackBy: trackHotelById">{{hotelOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="viajatoApp.telefone.seguradora" for="field_seguradora">Seguradora</label>
+                    <select class="form-control" id="field_seguradora" name="seguradora" [(ngModel)]="telefone.seguradora" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="seguradoraOption.id === telefone.seguradora?.id ? telefone.seguradora : seguradoraOption" *ngFor="let seguradoraOption of seguradoras; trackBy: trackSeguradoraById">{{seguradoraOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

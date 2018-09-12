@@ -5,6 +5,38 @@
     xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
 
     <include file="config/liquibase/changelog/00000000000000_initial_schema.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180912145646_added_entity_Estado.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180912145647_added_entity_Cidade.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180912145648_added_entity_Aeroporto.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180912145649_added_entity_Endereco.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180912145650_added_entity_Telefone.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180912145651_added_entity_LinhaAerea.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180912145652_added_entity_Voo.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180912145653_added_entity_Passagem.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180912145654_added_entity_Locadora.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180912145655_added_entity_Veiculo.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180912145656_added_entity_Locacao.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180912145657_added_entity_Hotel.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180912145658_added_entity_Quarto.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180912145659_added_entity_Reserva.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180912145700_added_entity_Cliente.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180912145701_added_entity_Seguradora.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180912145702_added_entity_Contrato.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
+    <include file="config/liquibase/changelog/20180912145647_added_entity_constraints_Cidade.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180912145648_added_entity_constraints_Aeroporto.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180912145649_added_entity_constraints_Endereco.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180912145650_added_entity_constraints_Telefone.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180912145652_added_entity_constraints_Voo.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180912145653_added_entity_constraints_Passagem.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180912145654_added_entity_constraints_Locadora.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180912145655_added_entity_constraints_Veiculo.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180912145656_added_entity_constraints_Locacao.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180912145657_added_entity_constraints_Hotel.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180912145658_added_entity_constraints_Quarto.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180912145659_added_entity_constraints_Reserva.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180912145700_added_entity_constraints_Cliente.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180912145701_added_entity_constraints_Seguradora.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180912145702_added_entity_constraints_Contrato.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
 </databaseChangeLog>

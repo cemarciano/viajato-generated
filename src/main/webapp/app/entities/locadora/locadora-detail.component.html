@@ -1,0 +1,33 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="locadora">
+            <h2><span jhiTranslate="viajatoApp.locadora.detail.title">Locadora</span> {{locadora.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="viajatoApp.locadora.nome">Nome</span></dt>
+                <dd>
+                    <span>{{locadora.nome}}</span>
+                </dd>
+                <dt><span jhiTranslate="viajatoApp.locadora.endereco">Endereco</span></dt>
+                <dd>
+                    <div *ngIf="locadora.endereco">
+                        <a [routerLink]="['/endereco', locadora.endereco?.id, 'view']">{{locadora.endereco?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/locadora', locadora.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>
