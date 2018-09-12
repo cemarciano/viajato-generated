@@ -1,0 +1,54 @@
+{
+    "name": "Telefone",
+    "fields": [
+        {
+            "fieldName": "ddd",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "numero",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "linhaAerea",
+            "otherEntityName": "linhaAerea",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "locadora",
+            "otherEntityName": "locadora",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "hotel",
+            "otherEntityName": "hotel",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "seguradora",
+            "otherEntityName": "seguradora",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20180912163813",
+    "entityTableName": "telefone",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

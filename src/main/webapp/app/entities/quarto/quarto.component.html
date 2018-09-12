@@ -1,0 +1,66 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="viajatoApp.quarto.home.title">Quartos</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-quarto" [routerLink]="['/quarto/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="viajatoApp.quarto.home.createLabel">
+            Create new Quarto
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="table-responsive" *ngIf="quartos">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="viajatoApp.quarto.tipo">Tipo</span></th>
+            <th><span jhiTranslate="viajatoApp.quarto.capacidade">Capacidade</span></th>
+            <th><span jhiTranslate="viajatoApp.quarto.diaria">Diaria</span></th>
+            <th><span jhiTranslate="viajatoApp.quarto.descricao">Descricao</span></th>
+            <th><span jhiTranslate="viajatoApp.quarto.hotel">Hotel</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let quarto of quartos ;trackBy: trackId">
+                <td><a [routerLink]="['/quarto', quarto.id, 'view' ]">{{quarto.id}}</a></td>
+                <td>{{quarto.tipo}}</td>
+                <td>{{quarto.capacidade}}</td>
+                <td>{{quarto.diaria}}</td>
+                <td>{{quarto.descricao}}</td>
+                <td>
+                    <div *ngIf="quarto.hotel">
+                        <a [routerLink]="['../hotel', quarto.hotel?.id, 'view' ]" >{{quarto.hotel?.id}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['/quarto', quarto.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/quarto', quarto.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'quarto/'+ quarto.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,25 @@
+
+{
+    "viajatoApp": {
+        "seguradora" : {
+            "home": {
+                "title": "Seguradoras",
+                "createLabel": "Criar novo Seguradora",
+                "createOrEditLabel": "Criar ou editar Seguradora"
+            },
+            "created": "Um novo Seguradora foi criado com o identificador {{ param }}",
+            "updated": "Um Seguradora foi atualizado com o identificador {{ param }}",
+            "deleted": "Um Seguradora foi deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Seguradora {{ id }}?"
+            },
+            "detail": {
+                "title": "Seguradora"
+            },
+            "nome": "Nome",
+            "endereco": "Endereco",
+            "contrato": "Contrato",
+            "telefone": "Telefone"
+        }
+    }
+}

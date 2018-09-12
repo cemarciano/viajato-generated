@@ -1,0 +1,26 @@
+
+{
+    "viajatoApp": {
+        "aeroporto" : {
+            "home": {
+                "title": "Aeroportos",
+                "createLabel": "Create a new Aeroporto",
+                "createOrEditLabel": "Create or edit a Aeroporto"
+            },
+            "created": "A new Aeroporto is created with identifier {{ param }}",
+            "updated": "A Aeroporto is updated with identifier {{ param }}",
+            "deleted": "A Aeroporto is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Aeroporto {{ id }}?"
+            },
+            "detail": {
+                "title": "Aeroporto"
+            },
+            "nome": "Nome",
+            "codigo": "Codigo",
+            "vemDe": "Vem De",
+            "vaiPara": "Vai Para",
+            "cidade": "Cidade"
+        }
+    }
+}

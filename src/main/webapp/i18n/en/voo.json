@@ -1,0 +1,28 @@
+
+{
+    "viajatoApp": {
+        "voo" : {
+            "home": {
+                "title": "Voos",
+                "createLabel": "Create a new Voo",
+                "createOrEditLabel": "Create or edit a Voo"
+            },
+            "created": "A new Voo is created with identifier {{ param }}",
+            "updated": "A Voo is updated with identifier {{ param }}",
+            "deleted": "A Voo is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Voo {{ id }}?"
+            },
+            "detail": {
+                "title": "Voo"
+            },
+            "numero": "Numero",
+            "partida": "Partida",
+            "chegada": "Chegada",
+            "passagem": "Passagem",
+            "linhaAerea": "Linha Aerea",
+            "origem": "Origem",
+            "destino": "Destino"
+        }
+    }
+}

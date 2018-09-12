@@ -1,0 +1,53 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="voo">
+            <h2><span jhiTranslate="viajatoApp.voo.detail.title">Voo</span> {{voo.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="viajatoApp.voo.numero">Numero</span></dt>
+                <dd>
+                    <span>{{voo.numero}}</span>
+                </dd>
+                <dt><span jhiTranslate="viajatoApp.voo.partida">Partida</span></dt>
+                <dd>
+                    <span>{{voo.partida}}</span>
+                </dd>
+                <dt><span jhiTranslate="viajatoApp.voo.chegada">Chegada</span></dt>
+                <dd>
+                    <span>{{voo.chegada}}</span>
+                </dd>
+                <dt><span jhiTranslate="viajatoApp.voo.linhaAerea">Linha Aerea</span></dt>
+                <dd>
+                    <div *ngIf="voo.linhaAerea">
+                        <a [routerLink]="['/linha-aerea', voo.linhaAerea?.id, 'view']">{{voo.linhaAerea?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="viajatoApp.voo.origem">Origem</span></dt>
+                <dd>
+                    <div *ngIf="voo.origem">
+                        <a [routerLink]="['/aeroporto', voo.origem?.id, 'view']">{{voo.origem?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="viajatoApp.voo.destino">Destino</span></dt>
+                <dd>
+                    <div *ngIf="voo.destino">
+                        <a [routerLink]="['/aeroporto', voo.destino?.id, 'view']">{{voo.destino?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/voo', voo.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

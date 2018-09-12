@@ -1,0 +1,49 @@
+{
+    "name": "Locadora",
+    "fields": [
+        {
+            "fieldName": "nome",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "endereco",
+            "otherEntityName": "endereco",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "locadora"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "telefone",
+            "otherEntityName": "telefone",
+            "otherEntityRelationshipName": "locadora"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "veiculo",
+            "otherEntityName": "veiculo",
+            "otherEntityRelationshipName": "locadora"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "contrato",
+            "otherEntityName": "contrato",
+            "otherEntityRelationshipName": "locadora"
+        }
+    ],
+    "changelogDate": "20180912163817",
+    "entityTableName": "locadora",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

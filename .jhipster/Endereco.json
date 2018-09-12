@@ -1,0 +1,71 @@
+{
+    "name": "Endereco",
+    "fields": [
+        {
+            "fieldName": "tipo",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "logradouro",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "numero",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "complemento",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "locadora",
+            "otherEntityName": "locadora",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "endereco"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "hotel",
+            "otherEntityName": "hotel",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "endereco"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "seguradora",
+            "otherEntityName": "seguradora",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "endereco"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "cidade",
+            "otherEntityName": "cidade",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20180912163812",
+    "entityTableName": "endereco",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

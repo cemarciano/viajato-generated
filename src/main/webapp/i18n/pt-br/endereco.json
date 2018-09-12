@@ -1,0 +1,29 @@
+
+{
+    "viajatoApp": {
+        "endereco" : {
+            "home": {
+                "title": "Enderecos",
+                "createLabel": "Criar novo Endereco",
+                "createOrEditLabel": "Criar ou editar Endereco"
+            },
+            "created": "Um novo Endereco foi criado com o identificador {{ param }}",
+            "updated": "Um Endereco foi atualizado com o identificador {{ param }}",
+            "deleted": "Um Endereco foi deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Endereco {{ id }}?"
+            },
+            "detail": {
+                "title": "Endereco"
+            },
+            "tipo": "Tipo",
+            "logradouro": "Logradouro",
+            "numero": "Numero",
+            "complemento": "Complemento",
+            "locadora": "Locadora",
+            "hotel": "Hotel",
+            "seguradora": "Seguradora",
+            "cidade": "Cidade"
+        }
+    }
+}
