@@ -1,0 +1,45 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="endereco">
+            <h2><span jhiTranslate="viajatoApp.endereco.detail.title">Endereco</span> {{endereco.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="viajatoApp.endereco.tipo">Tipo</span></dt>
+                <dd>
+                    <span>{{endereco.tipo}}</span>
+                </dd>
+                <dt><span jhiTranslate="viajatoApp.endereco.logradouro">Logradouro</span></dt>
+                <dd>
+                    <span>{{endereco.logradouro}}</span>
+                </dd>
+                <dt><span jhiTranslate="viajatoApp.endereco.numero">Numero</span></dt>
+                <dd>
+                    <span>{{endereco.numero}}</span>
+                </dd>
+                <dt><span jhiTranslate="viajatoApp.endereco.complemento">Complemento</span></dt>
+                <dd>
+                    <span>{{endereco.complemento}}</span>
+                </dd>
+                <dt><span jhiTranslate="viajatoApp.endereco.cidade">Cidade</span></dt>
+                <dd>
+                    <div *ngIf="endereco.cidade">
+                        <a [routerLink]="['/cidade', endereco.cidade?.id, 'view']">{{endereco.cidade?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/endereco', endereco.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

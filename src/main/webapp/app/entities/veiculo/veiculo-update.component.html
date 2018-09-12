@@ -1,0 +1,120 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-veiculo-heading" jhiTranslate="viajatoApp.veiculo.home.createOrEditLabel">Create or edit a Veiculo</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!veiculo.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="veiculo.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="viajatoApp.veiculo.tipo" for="field_tipo">Tipo</label>
+                    <input type="text" class="form-control" name="tipo" id="field_tipo"
+                        [(ngModel)]="veiculo.tipo" required/>
+                    <div [hidden]="!(editForm.controls.tipo?.dirty && editForm.controls.tipo?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.tipo?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="viajatoApp.veiculo.fabricante" for="field_fabricante">Fabricante</label>
+                    <input type="text" class="form-control" name="fabricante" id="field_fabricante"
+                        [(ngModel)]="veiculo.fabricante" required/>
+                    <div [hidden]="!(editForm.controls.fabricante?.dirty && editForm.controls.fabricante?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.fabricante?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="viajatoApp.veiculo.modelo" for="field_modelo">Modelo</label>
+                    <input type="text" class="form-control" name="modelo" id="field_modelo"
+                        [(ngModel)]="veiculo.modelo" required/>
+                    <div [hidden]="!(editForm.controls.modelo?.dirty && editForm.controls.modelo?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.modelo?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="viajatoApp.veiculo.anoModelo" for="field_anoModelo">Ano Modelo</label>
+                    <input type="number" class="form-control" name="anoModelo" id="field_anoModelo"
+                        [(ngModel)]="veiculo.anoModelo" required/>
+                    <div [hidden]="!(editForm.controls.anoModelo?.dirty && editForm.controls.anoModelo?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.anoModelo?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.controls.anoModelo?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="viajatoApp.veiculo.anoFabricacao" for="field_anoFabricacao">Ano Fabricacao</label>
+                    <input type="number" class="form-control" name="anoFabricacao" id="field_anoFabricacao"
+                        [(ngModel)]="veiculo.anoFabricacao" required/>
+                    <div [hidden]="!(editForm.controls.anoFabricacao?.dirty && editForm.controls.anoFabricacao?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.anoFabricacao?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.controls.anoFabricacao?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="viajatoApp.veiculo.cor" for="field_cor">Cor</label>
+                    <input type="text" class="form-control" name="cor" id="field_cor"
+                        [(ngModel)]="veiculo.cor" required/>
+                    <div [hidden]="!(editForm.controls.cor?.dirty && editForm.controls.cor?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.cor?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="viajatoApp.veiculo.numPassageiros" for="field_numPassageiros">Num Passageiros</label>
+                    <input type="number" class="form-control" name="numPassageiros" id="field_numPassageiros"
+                        [(ngModel)]="veiculo.numPassageiros" required/>
+                    <div [hidden]="!(editForm.controls.numPassageiros?.dirty && editForm.controls.numPassageiros?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.numPassageiros?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.controls.numPassageiros?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="viajatoApp.veiculo.locadora" for="field_locadora">Locadora</label>
+                    <select class="form-control" id="field_locadora" name="locadora" [(ngModel)]="veiculo.locadora" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="locadoraOption.id === veiculo.locadora?.id ? veiculo.locadora : locadoraOption" *ngFor="let locadoraOption of locadoras; trackBy: trackLocadoraById">{{locadoraOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
